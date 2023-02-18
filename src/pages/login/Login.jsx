@@ -1,4 +1,6 @@
 // LOGIN PAGE
+import { Link } from "react-router-dom";
+
 import "./Login.scss";
 
 function Login() {
@@ -16,7 +18,9 @@ function Login() {
             delectus?
           </p>
           <span>Don't have an account?</span>
-          <button>Register</button>
+          <Link to="/register">
+            <button>Register</button>
+          </Link>
         </div>
 
         {/* RIGHT SIDE OF CARD */}
