@@ -1,4 +1,9 @@
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
 import Leftbar from "./components/leftbar/Leftbar";
@@ -9,6 +14,9 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 
 function App() {
+  // Simulates a logged in user.
+  const currentUser = true;
+
   // Base layout for the home page.
   const Layout = () => {
     return (
@@ -23,11 +31,22 @@ function App() {
     );
   };
 
+  // If there is no logged in user, redirect to the login page.
+  // children is everything between <ProtectedRoute></ProtectedRoute>.
+  const ProtectedRoute = ({ children }) => {
+    if (!currentUser) return <Navigate to="/login" />;
+    else return children;
+  };
+
   // Example of client side routing with react router dom.
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />,
+      element: (
+        <ProtectedRoute>
+          <Layout />
+        </ProtectedRoute>
+      ),
       // children holds the paths and elements that will take the place of the Outlet.
       children: [
         {
