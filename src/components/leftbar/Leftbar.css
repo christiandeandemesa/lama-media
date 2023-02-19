@@ -1,0 +1,46 @@
+.leftbar {
+  flex: 2;
+}
+.leftbar .container {
+  padding: 20px;
+}
+.leftbar .container hr {
+  margin: 20px 0px;
+  border: none;
+  height: 0.5px;
+  background-color: lightgrey;
+}
+.leftbar .container .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.leftbar .container .menu span {
+  font-size: 12px;
+}
+.leftbar .container .menu .user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.leftbar .container .menu .user img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.leftbar .container .menu .user span {
+  font-size: 14px;
+}
+.leftbar .container .menu .item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.leftbar .container .menu .item img {
+  width: 30px;
+}
+.leftbar .container .menu .item span {
+  font-size: 14px;
+}/*# sourceMappingURL=Leftbar.css.map */
