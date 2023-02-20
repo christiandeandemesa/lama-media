@@ -1,5 +1,12 @@
 .leftbar {
   flex: 2;
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  overflow: scroll;
+}
+.leftbar::-webkit-scrollbar {
+  display: none;
 }
 .leftbar .container {
   padding: 20px;
