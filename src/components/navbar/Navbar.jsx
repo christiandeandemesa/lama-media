@@ -1,4 +1,5 @@
 // NAVBAR
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -10,9 +11,13 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
+import { DarkModeContext } from "../../contexts/darkModeContext";
+
 import "./Navbar.scss";
 
 function Navbar() {
+  const { darkMode, toggle } = useContext(DarkModeContext);
+
   return (
     <div class="navbar">
       {/* LEFT SIDE OF NAVBAR */}
@@ -24,7 +29,14 @@ function Navbar() {
 
         {/* LEFT ICONS */}
         <HomeOutlinedIcon />
-        <DarkModeOutlinedIcon />
+        {darkMode ? (
+          <WbSunnyOutlinedIcon onClick={toggle} style={{ cursor: "pointer" }} />
+        ) : (
+          <DarkModeOutlinedIcon
+            onClick={toggle}
+            style={{ cursor: "pointer" }}
+          />
+        )}
         <GridViewOutlinedIcon />
 
         {/* SEARCH INPUT */}

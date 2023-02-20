@@ -1,37 +1,39 @@
-.rightbar {
+.theme-light .rightbar {
   flex: 3;
   position: sticky;
   top: 70px;
   height: calc(100vh - 70px);
   overflow: scroll;
+  background-color: #f6f3f3;
 }
-.rightbar::-webkit-scrollbar {
+.theme-light .rightbar::-webkit-scrollbar {
   display: none;
 }
-.rightbar .container {
+.theme-light .rightbar .container {
   padding: 20px;
 }
-.rightbar .container .item {
+.theme-light .rightbar .container .item {
   box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
   padding: 20px;
   margin-bottom: 20px;
+  background-color: white;
 }
-.rightbar .container .item span {
+.theme-light .rightbar .container .item span {
   color: gray;
 }
-.rightbar .container .item .user {
+.theme-light .rightbar .container .item .user {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 20px 0px;
 }
-.rightbar .container .item .user .userInfo {
+.theme-light .rightbar .container .item .user .userInfo {
   display: flex;
   align-items: center;
   gap: 20px;
   position: relative;
 }
-.rightbar .container .item .user .userInfo img {
+.theme-light .rightbar .container .item .user .userInfo img {
   width: 40px;
   height: 40px;
   min-width: 40px;
@@ -40,7 +42,7 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-.rightbar .container .item .user .userInfo .online {
+.theme-light .rightbar .container .item .user .userInfo .online {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -49,27 +51,104 @@
   top: 0;
   left: 30px;
 }
-.rightbar .container .item .user .userInfo p {
-  color: gray;
+.theme-light .rightbar .container .item .user .userInfo p {
+  color: #555;
 }
-.rightbar .container .item .user .userInfo span {
+.theme-light .rightbar .container .item .user .userInfo span {
   font-weight: 500;
-  color: black;
+  color: #000;
 }
-.rightbar .container .item .user .buttons {
+.theme-light .rightbar .container .item .user .buttons {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.rightbar .container .item .user .buttons button {
+.theme-light .rightbar .container .item .user .buttons button {
   border: none;
   padding: 5px;
   color: white;
   cursor: pointer;
 }
-.rightbar .container .item .user .buttons button:first-child {
+.theme-light .rightbar .container .item .user .buttons button:first-child {
   background-color: #5271ff;
 }
-.rightbar .container .item .user .buttons button:last-child {
+.theme-light .rightbar .container .item .user .buttons button:last-child {
+  background-color: #f0544f;
+}
+.theme-dark .rightbar {
+  flex: 3;
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  overflow: scroll;
+  background-color: #333;
+}
+.theme-dark .rightbar::-webkit-scrollbar {
+  display: none;
+}
+.theme-dark .rightbar .container {
+  padding: 20px;
+}
+.theme-dark .rightbar .container .item {
+  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #222;
+}
+.theme-dark .rightbar .container .item span {
+  color: gray;
+}
+.theme-dark .rightbar .container .item .user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0px;
+}
+.theme-dark .rightbar .container .item .user .userInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+.theme-dark .rightbar .container .item .user .userInfo img {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.theme-dark .rightbar .container .item .user .userInfo .online {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: limegreen;
+  position: absolute;
+  top: 0;
+  left: 30px;
+}
+.theme-dark .rightbar .container .item .user .userInfo p {
+  color: lightgray;
+}
+.theme-dark .rightbar .container .item .user .userInfo span {
+  font-weight: 500;
+  color: whitesmoke;
+}
+.theme-dark .rightbar .container .item .user .buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.theme-dark .rightbar .container .item .user .buttons button {
+  border: none;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+}
+.theme-dark .rightbar .container .item .user .buttons button:first-child {
+  background-color: #5271ff;
+}
+.theme-dark .rightbar .container .item .user .buttons button:last-child {
   background-color: #f0544f;
 }/*# sourceMappingURL=Rightbar.css.map */

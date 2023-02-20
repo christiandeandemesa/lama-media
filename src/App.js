@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,14 +14,19 @@ import Profile from "./pages/profile/Profile";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 
+import { DarkModeContext } from "./contexts/darkModeContext";
+
+import "./style.scss";
+
 function App() {
   // Simulates a logged in user.
   const currentUser = true;
+  const { darkMode } = useContext(DarkModeContext);
 
   // Base layout for the home page.
   const Layout = () => {
     return (
-      <div>
+      <div className={`theme-${darkMode ? "dark" : "light"}`}>
         <Navbar />
         <div style={{ display: "flex" }}>
           <Leftbar />
