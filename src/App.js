@@ -15,12 +15,13 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 
 import { DarkModeContext } from "./contexts/darkModeContext";
+import { AuthContext } from "./contexts/authContext";
 
 import "./style.scss";
 
 function App() {
   // Simulates a logged in user.
-  const currentUser = true;
+  const { currentUser } = useContext(AuthContext);
   const { darkMode } = useContext(DarkModeContext);
 
   // Base layout for the home page.

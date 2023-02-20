@@ -2,7 +2,7 @@ import "./Rightbar.scss";
 
 function Rightbar() {
   return (
-    <div class="rightbar">
+    <div className="rightbar">
       <div className="container">
         <div className="item">
           <span>Suggestions For You</span>

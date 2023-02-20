@@ -12,14 +12,16 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 import { DarkModeContext } from "../../contexts/darkModeContext";
+import { AuthContext } from "../../contexts/authContext";
 
 import "./Navbar.scss";
 
 function Navbar() {
   const { darkMode, toggle } = useContext(DarkModeContext);
+  const { currentUser } = useContext(AuthContext);
 
   return (
-    <div class="navbar">
+    <div className="navbar">
       {/* LEFT SIDE OF NAVBAR */}
       <div className="left">
         {/* LOGO */}
@@ -55,11 +57,8 @@ function Navbar() {
 
         {/* USER AVATAR */}
         <div className="user">
-          <img
-            src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt=""
-          />
-          <span>John Doe</span>
+          <img src={currentUser.profilePic} alt="" />
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>
