@@ -12,6 +12,7 @@
     background-color: themed("bg");
     color: themed("textColor");
     border-bottom: 1px solid themed("border");
+    z-index: 999;
 
     .left {
       display: flex;

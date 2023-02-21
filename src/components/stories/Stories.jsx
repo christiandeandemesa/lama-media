@@ -4,7 +4,7 @@ import { AuthContext } from "../../contexts/authContext";
 
 import "./Stories.scss";
 
-// Dummy data
+// Dummy data.
 const stories = [
   {
     id: 1,
