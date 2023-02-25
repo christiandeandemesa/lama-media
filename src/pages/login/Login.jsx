@@ -14,7 +14,6 @@ function Login() {
   };
 
   return (
-    // CONTAINER
     <div className="login">
       {/* LOGIN CARD */}
       <div className="card">

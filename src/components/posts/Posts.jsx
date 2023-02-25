@@ -1,3 +1,4 @@
+// POSTS
 import Post from "../post/Post";
 
 import "./Posts.scss";

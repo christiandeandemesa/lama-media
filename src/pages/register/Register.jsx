@@ -5,7 +5,6 @@ import "./Register.scss";
 
 function Register() {
   return (
-    // CONTAINER
     <div className="register">
       {/* REGISTER CARD */}
       <div className="card">

@@ -1,3 +1,4 @@
+// POST
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -20,6 +21,7 @@ function Post({ post }) {
   return (
     <div className="post">
       <div className="container">
+        {/* USERNAME AND AVATAR */}
         <div className="user">
           <div className="userInfo">
             <img src={post.profilePic} alt="" />
@@ -35,10 +37,14 @@ function Post({ post }) {
           </div>
           <MoreHorizIcon />
         </div>
+
+        {/* POST CONTENT AND IMAGE */}
         <div className="content">
           <p>{post.desc}</p>
           <img src={post.img} alt="" />
         </div>
+
+        {/* LIKES, COMMENTS, AND SHARE */}
         <div className="info">
           <div className="item">
             {liked ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}

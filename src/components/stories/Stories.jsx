@@ -1,3 +1,4 @@
+// STORIES
 import { useContext } from "react";
 
 import { AuthContext } from "../../contexts/authContext";
@@ -33,11 +34,14 @@ function Stories() {
 
   return (
     <div className="stories">
+      {/* LEFTMOST STORY */}
       <div className="story">
         <img src={currentUser.profilePic} alt="" />
         <span>{currentUser.name}</span>
         <button>+</button>
       </div>
+
+      {/* REST OF STORIES */}
       {stories.map((story) => (
         <div className="story" key={story.id}>
           <img src={story.img} alt="" />

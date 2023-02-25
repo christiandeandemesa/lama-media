@@ -1,3 +1,4 @@
+// POST'S COMMENTS
 import { useContext } from "react";
 
 import { AuthContext } from "../../contexts/authContext";
@@ -29,11 +30,14 @@ function Comments() {
 
   return (
     <div className="comments">
+      {/* COMMENT INPUT */}
       <div className="write">
         <img src={currentUser.profilePic} alt="" />
         <input type="text" placeholder="write a comment" />
         <button>Send</button>
       </div>
+
+      {/* COMMENTS */}
       {comments.map((comment) => (
         <div className="comment">
           <img src={comment.profilePicture} alt="" />
