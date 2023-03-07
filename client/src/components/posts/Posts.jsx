@@ -8,6 +8,7 @@ import { makeRequest } from "../../axios";
 import "./Posts.scss";
 
 function Posts() {
+  // Provides an isLoading state, error, and data while fetching data.
   const { isLoading, error, data } = useQuery({
     queryKey: ["posts"],
     queryFn: () =>

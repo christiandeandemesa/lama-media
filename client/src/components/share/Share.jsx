@@ -1,7 +1,11 @@
 // SHARE A POST
-import { useContext } from "react";
+import { useContext, useState } from "react";
+
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { AuthContext } from "../../contexts/authContext";
+
+import { makeRequest } from "../../axios";
 
 import Image from "../../assets/img.png";
 import Map from "../../assets/map.png";
@@ -11,6 +15,28 @@ import "./Share.scss";
 
 function Share() {
   const { currentUser } = useContext(AuthContext);
+
+  const queryClient = useQueryClient();
+
+  const [file, setFile] = useState(null);
+  const [desc, setDesc] = useState("");
+
+  // Used when mutating existing data (e.g. creating new data).
+  const mutation = useMutation({
+    mutationFn: (newPost) => {
+      return makeRequest.post("/posts", newPost);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["posts"] });
+    },
+  });
+
+  // Creates a post.
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    mutation.mutate({ desc });
+  };
 
   return (
     <div className="share">
@@ -24,6 +50,7 @@ function Share() {
           <input
             type="text"
             placeholder={`What's on your mind ${currentUser.name}?`}
+            onChange={(e) => setDesc(e.target.value)}
           />
         </div>
 
@@ -33,7 +60,12 @@ function Share() {
         <div className="bottom">
           <div className="left">
             {/* ADD IMAGE BUTTON */}
-            <input type="file" id="file" style={{ display: "none" }} />
+            <input
+              type="file"
+              id="file"
+              onChange={(e) => setFile(e.target.files[0])}
+              style={{ display: "none" }}
+            />
             <label htmlFor="file">
               <div className="item">
                 <img src={Image} alt="" />
@@ -56,7 +88,7 @@ function Share() {
 
           {/* SHARE BUTTON */}
           <div className="right">
-            <button>Share</button>
+            <button onClick={handleClick}>Share</button>
           </div>
         </div>
       </div>
