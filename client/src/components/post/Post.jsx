@@ -8,6 +8,8 @@ import TextsmsOutlinedIcon from "@mui/icons-material/TextsmsOutlined";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
+import moment from "moment";
+
 import Comments from "../comments/Comments";
 
 import "./Post.scss";
@@ -32,7 +34,7 @@ function Post({ post }) {
               >
                 <span className="name">{post.name}</span>
               </Link>
-              <span className="date">1 min ago</span>
+              <span className="date">{moment(post.createdAt).fromNow()}</span>
             </div>
           </div>
           <MoreHorizIcon />
@@ -41,7 +43,7 @@ function Post({ post }) {
         {/* POST CONTENT AND IMAGE */}
         <div className="content">
           <p>{post.desc}</p>
-          <img src={post.img} alt="" />
+          <img src={"./upload/" + post.img} alt="" />
         </div>
 
         {/* LIKES, COMMENTS, AND SHARE */}
